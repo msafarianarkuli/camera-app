@@ -1,5 +1,6 @@
-import { meta } from "@/utils/meta";
+import { meta } from "@/lib/meta";
 import "@/assets/styles/globals.scss";
+import ReactQueryProvider from "./ReactQueryProvider";
 interface RootLayoutProps {
   children: React.ReactNode;
 }
@@ -12,8 +13,10 @@ export const metadata = {
 
 export default function RootLayout({ children }: RootLayoutProps): JSX.Element {
   return (
-    <html lang='fa'>
-      <body>{children}</body>
-    </html>
+    <ReactQueryProvider>
+      <html lang='fa'>
+        <body>{children}</body>
+      </html>
+    </ReactQueryProvider>
   );
 }
