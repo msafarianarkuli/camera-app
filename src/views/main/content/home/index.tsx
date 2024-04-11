@@ -6,7 +6,7 @@ import Webcam from "react-webcam";
 const Home = () => {
   const [cameraOpen, setCameraOpen] = useState(false);
   const videoConstraints = {
-    facingMode: { exact: "user" },
+    facingMode: { exact: "environment" },
   };
   return (
     <Container maxWidth='sm' sx={{ p: 0, height: "100vh" }}>
