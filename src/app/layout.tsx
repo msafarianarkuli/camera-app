@@ -1,6 +1,9 @@
+import { CssBaseline } from "@mui/material";
+import ThemeRegistry from "@/theme/ThemeRegistry";
+import ReactQueryProvider from "./ReactQueryProvider";
 import { meta } from "@/lib/meta";
 import "@/assets/styles/globals.scss";
-import ReactQueryProvider from "./ReactQueryProvider";
+
 interface RootLayoutProps {
   children: React.ReactNode;
 }
@@ -15,7 +18,10 @@ export default function RootLayout({ children }: RootLayoutProps): JSX.Element {
   return (
     <ReactQueryProvider>
       <html lang='fa'>
-        <body>{children}</body>
+        <ThemeRegistry>
+          <CssBaseline />
+          <body>{children}</body>
+        </ThemeRegistry>
       </html>
     </ReactQueryProvider>
   );
